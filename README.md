@@ -9,9 +9,21 @@
   <img src="https://img.shields.io/badge/Privacy-100%25%20Zero--Cloud%20Local%20Custody-success.svg" alt="Privacy" />
 </p>
 
+<p align="center">
+  <img src="assets/ostium_emblem.svg" alt="Ostium Mathematical Emblem" width="180" />
+</p>
+
 > **Distribution Hub:** Official Pre-Compiled Releases & Cryptographic Verification  
 > **Platform Target:** Linux (x86_64, aarch64) • Windows (x86_64) • Completely Self-Contained Static Binaries  
 > **Status:** PRODUCTION READY • 100% FORMALLY VERIFIED • 57 CRUCIBLE ADVERSARIAL TESTS PASSED  
+
+---
+
+## 🏛️ Mythological Lineage & Geometric Rationale
+
+* **The Sacred Threshold**: In Roman antiquity and religion, **Ostium** (*ōstium* — "the doorway, threshold, entry mouth") was the consecrated entrance separating the chaotic outer environment from the fortified interior of a sanctuary or home. Guarded by household and civic threshold numina, no entity crossed the ostium without greeting and clearance.
+* **Sovereign Architectural Role**: In our fleet, **`ostium`** functions as the home gateway sentinel, station discovery hub, and Wireless Intrusion Detection System (WIDS). It defends edge networks against deauthentication bursts, rogue access points, and unmapped device intrusions directly at the LAN threshold.
+* **Mathematical Crest Geometry**: Generated from pure geometric formulas on a transparent background, the emblem embeds golden-ratio isometric gateway portals ($w \times \phi$), concentric arched threshold vaults, perspective convergence rays radiating from an inner horizon, and a central keystone node.  
 
 ---
 
