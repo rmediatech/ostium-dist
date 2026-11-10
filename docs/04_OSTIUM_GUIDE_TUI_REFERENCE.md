@@ -14,17 +14,17 @@ When launching `ostium watch`, the application initializes an alternate terminal
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │ 🛡️ OSTIUM REAL-TIME STATION SENTINEL & WIDS RADAR v0.1.2                    Host: sentinel-node │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ GATEWAY: 10.0.0.1 (WNC CR1000B Wi-Fi 6E) │ IFACE: wlan0 │ MODE: DUAL-STACK WIDS │ PMF: 802.11w  │
+│ GATEWAY: 10.0.0.1 (Carrier Wi-Fi 6E Gateway) │ IFACE: wlan0 │ MODE: DUAL-STACK WIDS │ PMF: 802.11w  │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────┤
 │  #  STATION IDENTIFIER / ALIAS     MAC ADDRESS        IP ADDRESS   VENDOR / OS      RSSI   STATUS │
 │ ─────────────────────────────────────────────────────────────────────────────────────────────── │
-│ >1. ★ THIS HOST (sentinel-node)    00:11:22:33:44:AA  10.0.0.57    Linux Kernel     -18dBm TRUSTED│
-│  2. Gateway Access Point           00:11:22:33:44:01  10.0.0.1     Wistron NeWeb    -21dBm GATEWAY│
-│  3. Executive Mobile Handset       00:11:22:33:44:20  10.0.0.168   Apple iOS        -46dBm TRUSTED│
-│  4. Living Room 4K Media Console   00:11:22:33:44:30  10.0.0.182   Sony Interactive -52dBm TRUSTED│
-│  5. Network Attached Storage       00:11:22:33:44:40  10.0.0.183   Synology NAS     -35dBm TRUSTED│
-│  6. Kitchen Smart Display          00:11:22:33:44:50  10.0.0.185   Google Home      -61dBm TRUSTED│
-│  7. Unauthorized Station Probe     00:C0:CA:99:12:44  10.0.0.244   Alfa Network     -79dBm ROGUE  │
+│ >1. ★ THIS HOST (sentinel-node)    00:11:22:33:44:AA  10.0.0.10    Linux Kernel     -18dBm TRUSTED│
+│  2. Gateway Access Point           00:11:22:33:44:01  10.0.0.1     Carrier AP       -21dBm GATEWAY│
+│  3. Primary Mobile Handset         00:11:22:33:44:20  10.0.0.20    Mobile Client    -46dBm TRUSTED│
+│  4. Media Center Console           00:11:22:33:44:30  10.0.0.30    Media Receiver   -52dBm TRUSTED│
+│  5. Network Attached Storage       00:11:22:33:44:40  10.0.0.40    Storage Server   -35dBm TRUSTED│
+│  6. Connected Smart Display        00:11:22:33:44:50  10.0.0.50    Smart Terminal   -61dBm TRUSTED│
+│  7. Unauthorized Station Probe     00:C0:CA:99:12:44  10.0.0.244   Wireless Probe   -79dBm ROGUE  │
 ├────────────────────────────────────────────────────────────────┬────────────────────────────────┤
 │ 📡 WIRELESS THREAT RADAR & VELOCITY MONITOR                    │ 📋 REAL-TIME AUDIT STREAM      │
 ├────────────────────────────────────────────────────────────────┼────────────────────────────────┤

@@ -1,4 +1,8 @@
-# Editor / OS files
+/bin
+/target
+/*.db
+/*.db-shm
+/*.db-wal
 .DS_Store
 *~
 *.swp

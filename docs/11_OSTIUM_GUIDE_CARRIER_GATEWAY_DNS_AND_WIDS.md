@@ -6,7 +6,7 @@
 
 > [!NOTE]
 > **Legal Trademark & Open Source Attribution Notice:**  
-> All product names, logos, brands, and registered trademarks mentioned in this document are property of their respective trademark holders. All company, product, and service names used herein are strictly for technical interoperability, hardware architecture classification, and educational compatibility reference under U.S. Trademark Fair Use doctrine. Firmware references relate to standard open-source GPL-licensed Linux kernel stacks published by upstream hardware ODMs and carriers (e.g. [Verizon Open Source Portal](https://www.verizon.com/support/residential/internet/equipment/open-source-software), [Verizon Open Source GitHub](https://github.com/verizon), [Arcadyan GPL](https://openwrt.org), and [OpenWrt](https://openwrt.org)).
+> All product names, logos, brands, and registered trademarks mentioned in this document are property of their respective trademark holders. All company, product, and service names used herein are strictly for technical interoperability, hardware architecture classification, and educational compatibility reference under U.S. Trademark Fair Use doctrine. Firmware references relate to standard open-source GPL-licensed Linux kernel stacks published by upstream hardware ODMs and carriers.
 
 ---
 
@@ -19,15 +19,15 @@ In modern consumer and small-business deployments, ISP-provided carrier gateways
 4. Dual-stack parallel IPv6 DNS leaks (RFC 8305 "Happy Eyeballs").
 
 To establish 100% whole-network sanitization and intrusion defense without replacing carrier optical equipment, Ostium and an Upstream Defensive DNS Sinkhole deploy a **Coordinated Dual-Tier Defensive Architecture**:
-* **Layer 1: Ostium Local WIDS Sentinel**: Runs entirely inside your home network on a local node (`10.0.0.160`), monitoring local 802.11 RF frames for deauth floods, rogue BSSIDs, evil twins, and subnet ARP spoofing.
+* **Layer 1: Ostium Local WIDS Sentinel**: Runs entirely inside your home network on a local node (`10.0.0.10`), monitoring local 802.11 RF frames for deauth floods, rogue BSSIDs, evil twins, and subnet ARP spoofing.
 * **Layer 2: Upstream Defensive DNS Sinkhole**: The gateway router's WAN DNS is pointed to a High-Availability Upstream Resolver Pair (`198.51.100.89` and `203.0.113.159`), sanitizing all internet domain queries across every phone, TV, tablet, and PC automatically.
 
 ```mermaid
 flowchart TD
     subgraph LAN["Defended Local Network (10.0.0.0/24)"]
-        TV["Smart TVs & IoT (10.0.0.101)"]
-        WORK["Workstations & Phones (10.0.0.57)"]
-        SENTINEL["Ostium Sentinel Node (10.0.0.160)<br/>- 802.11 WIDS Monitor<br/>- Rogue Station Ejector<br/>- ARP Spoof Guard"]
+        TV["Smart TVs & IoT (10.0.0.50)"]
+        WORK["Workstations & Phones (10.0.0.20)"]
+        SENTINEL["Ostium Sentinel Node (10.0.0.10)<br/>- 802.11 WIDS Monitor<br/>- Rogue Station Ejector<br/>- ARP Spoof Guard"]
         GATEWAY["Carrier Gateway Router (10.0.0.1)<br/>- DHCP Active (IPv4 Only)<br/>- IPv6 Support: Disabled<br/>- WAN DNS: Pointed to Sovereign Upstream Nodes"]
     end
 
@@ -69,7 +69,7 @@ A foundational discovery from real-world gateway engineering is the distinction 
 flowchart TD
     GOAL["Deployment Goal: Whole-Network Defense"] --> ROUTER_CHECK{"Does your router allow custom LAN DHCP DNS (Option 6)?"}
     
-    ROUTER_CHECK -->|"YES<br/>(OpenWrt, pfSense, ASUS-Merlin, Ubiquiti)"| LOCAL_LAN["<b>Scenario A: Local LAN Deployment</b><br/>• Run defensive resolver locally on LAN (e.g. 10.0.0.160)<br/>• Configure router DHCP Option 6 to point to local LAN IP<br/>• Clients query local resolver directly inside LAN"]
+    ROUTER_CHECK -->|"YES<br/>(OpenWrt, pfSense, ASUS-Merlin, Ubiquiti)"| LOCAL_LAN["<b>Scenario A: Local LAN Deployment</b><br/>• Run defensive resolver locally on LAN (e.g. 10.0.0.10)<br/>• Configure router DHCP Option 6 to point to local LAN IP<br/>• Clients query local resolver directly inside LAN"]
     
     ROUTER_CHECK -->|"NO<br/>(Carrier Gateways: Tier 1 Fiber & Cable Gateways)"| WAN_CHECK{"Are you configuring router WAN / Broadband DNS?"}
     
@@ -79,9 +79,9 @@ flowchart TD
 ```
 
 > [!NOTE]
-> **In-House Technology Context & Public Deployment Note**  
+> **Defensive Architecture Note**  
 > **Ostium itself is an autonomous local-first WIDS and L2/L3 sentinel — it runs 100% locally on your home network and never requires an external IP.**  
-> In our internal fleet, we separately operate **Aegis** as an in-house high-availability dual-node sovereign DNS resolver pair. Because Aegis is currently private under fleet testing, public users deploying Ostium for physical and local network defense can point their carrier gateway WAN DNS to any external defensive resolver or self-hosted VPS DNS sinkhole of their choice using this exact topology.
+> Users deploying Ostium for physical and local network defense can point their carrier gateway WAN DNS to any external defensive resolver or self-hosted VPS DNS sinkhole (such as Aegis) of their choice using this exact topology.
 
 ---
 
@@ -96,7 +96,7 @@ sequenceDiagram
     participant GW as Carrier Gateway (10.0.0.1)
     participant DNS1 as Primary Upstream DNS (198.51.100.89)
     participant UP as Upstream Clean DNS
-    participant WIDS as Ostium Sentinel (10.0.0.160)
+    participant WIDS as Ostium Sentinel (10.0.0.10)
 
     Note over TV,GW: Scenario A: Background Ad & Telemetry Probe
     TV->>GW: UDP:53 Query A ads.telemetry-host.com

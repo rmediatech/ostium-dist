@@ -54,7 +54,7 @@ ostium whoami
   Hostname:          sentinel-node-01
   Primary Interface: wlan0
   Primary MAC:       00:11:22:33:44:AA
-  Primary LAN IP:    10.0.0.57
+  Primary LAN IP:    10.0.0.10
   Self Badge:        ★ THIS HOST (sentinel-node-01)
 --------------------------------------------------------------------------------
   ACTIVE INTERFACES:

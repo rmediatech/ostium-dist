@@ -78,7 +78,7 @@ In accordance with sovereign software integrity, `ostium` documents its precise 
 
 ### Limit 3: Tier 3 Gateway Telemetry & Hardware ACL Ejection
 - **Gateway Driver Compatibility**: Hardware-level station disassociation (`ostium eject`) and hardware MAC access control list (ACL) manipulation require direct communication with the gateway's management interface.
-- **Pre-Integrated Out-of-the-Box**: Carrier Wi-Fi 6/6E QSDK gateways (Qualcomm Networking Pro / WNC CR1000B platforms) are natively supported via asynchronous RPC.
+- **Pre-Integrated Out-of-the-Box**: Carrier Wi-Fi 6/6E QSDK gateways (Qualcomm Networking Pro architectures) are natively supported via asynchronous RPC.
 - **Closed Proprietary Consumer Mesh**: Consumer mesh routers with closed proprietary cloud backends (e.g., Google Nest Wi-Fi, Amazon eero) that do not expose local RPC, SSH, or administrative APIs cannot be commanded to disassociate stations at the hardware radio layer. For such networks, `ostium` provides clean asynchronous Rust driver traits allowing operators to connect custom OpenWrt, pfSense, OPNsense, or RouterOS scripts.
 - **Self-Preservation Protection**: Under no circumstances will `ostium` permit an operator to eject or blacklist their own host machine. The `HostIdentity::assert_not_self()` invariant mathematically asserts machine identity before dispatching any disassociation or ACL blacklist command.
 

@@ -45,18 +45,23 @@ flowchart TD
 
 ## ⚡ 1. One-Line Installation
 
+### 1-Click Stream Install (Linux & macOS)
+```bash
+curl -sSL https://rmediatech.com/install/ostium | sh
+```
+
 ### Linux (`x86_64` / `aarch64`)
 Download the verified, statically linked single Musl binary:
 
 ```bash
 # Download verified x86_64 binary
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-linux-x86_64 -o ostium
+curl -sSL https://rmediatech.com/bin/ostium -o ostium
 chmod +x ostium
 sudo mv ostium /usr/local/bin/
 
 # Verify binary integrity
 ostium --version
-# Output: ostium 0.1.2
+# Output: ostium 0.2.0
 ```
 
 ### Windows (`x86_64`)
@@ -64,11 +69,11 @@ Download the standalone native console executable via PowerShell:
 
 ```powershell
 # Download verified Windows x86_64 executable
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-windows-x86_64.exe" -OutFile "ostium.exe"
+Invoke-WebRequest -Uri "https://rmediatech.com/bin/ostium.exe" -OutFile "ostium.exe"
 
 # Verify binary integrity
 .\ostium.exe --version
-# Output: ostium 0.1.2
+# Output: ostium 0.2.0
 ```
 
 ### macOS (Apple Silicon M1-M4 / Intel)
@@ -76,12 +81,12 @@ Download the native Mach-O executable via Terminal:
 
 ```bash
 # Apple Silicon (M1/M2/M3/M4)
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-macos-aarch64 -o ostium
+curl -sSL https://rmediatech.com/bin/ostium-darwin-arm64 -o ostium
 chmod +x ostium
 sudo mv ostium /usr/local/bin/
 
 # Intel Mac (x86_64)
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-macos-x86_64 -o ostium
+curl -sSL https://rmediatech.com/bin/ostium-darwin-x86_64 -o ostium
 chmod +x ostium
 sudo mv ostium /usr/local/bin/
 
@@ -90,7 +95,7 @@ xattr -d com.apple.quarantine /usr/local/bin/ostium 2>/dev/null || true
 
 # Verify binary integrity
 ostium --version
-# Output: ostium 0.1.2
+# Output: ostium 0.2.0
 ```
 
 ---
@@ -127,10 +132,10 @@ ostium whoami
 ================================================================================
   OSTIUM HOST IDENTITY & SELF-AWARENESS MATRIX
 ================================================================================
-  Hostname:          sentinel-node-01 (or CITADEL-WIN1 / macbook-pro.local)
+  Hostname:          sentinel-node-01 (or workstation-alpha / macbook-pro.local)
   Primary Interface: wlan0 (or en0 / Ethernet)
   Primary MAC:       00:11:22:33:44:AA
-  Primary LAN IP:    10.0.0.57
+  Primary LAN IP:    10.0.0.10
   Self Badge:        ★ THIS HOST (sentinel-node-01)
 --------------------------------------------------------------------------------
   ACTIVE INTERFACES (2 TOTAL):
@@ -139,7 +144,7 @@ ostium whoami
 --------------------------------------------------------------------------------
   REGISTERED LOCAL IP ADDRESSES (3 TOTAL):
     • fe80::211:22ff:fe33:44aa (★ THIS HOST)
-    • 10.0.0.57 (★ THIS HOST)
+    • 10.0.0.10 (★ THIS HOST)
     • 127.0.0.1 (★ THIS HOST)
 ================================================================================
   Self-Preservation Guard: ACTIVE (Self MACs/IPs permanently immune from ban)
@@ -158,9 +163,9 @@ ostium identify
 ================================================================================
   Gateway IP:        10.0.0.1
   Gateway MAC:       00:11:22:33:44:01
-  ODM Manufacturer:  Wistron NeWeb Corp (WNC)
+  ODM Manufacturer:  Enterprise Gateway Platform
   Carrier Family:    Carrier Wi-Fi 6E Gateway
-  Model Profile:     CR1000B (10GbE Wi-Fi 6E)
+  Model Profile:     Multi-Gigabit Wi-Fi 6E Gateway
   SoC Architecture:  High-Throughput Quad-Core ARM64 Networking Platform
   Kernel ABI:        Linux Embedded Carrier Kernel
   Hardware ACL:      SUPPORTED
@@ -185,13 +190,13 @@ Executing Dual-Stack Active Sweep across 10.0.0.0/24 & IPv6 Multicast (wlan0)...
 ================================================================================
   MAC ADDRESS        IP ADDRESS            VENDOR / HOSTNAME            STATUS
 --------------------------------------------------------------------------------
-  00:11:22:33:44:AA  10.0.0.57             ★ THIS HOST (sentinel-node)  TRUSTED
+  00:11:22:33:44:AA  10.0.0.10             ★ THIS HOST (sentinel-node)  TRUSTED
   00:11:22:33:44:01  10.0.0.1              Carrier Gateway Wi-Fi 6E     TRUSTED
-  00:11:22:33:44:10  10.0.0.153            IoT Smart Plug               TRUSTED
-  00:11:22:33:44:20  10.0.0.168            Mobile-Station (Handset)     TRUSTED
-  00:11:22:33:44:30  10.0.0.182            Media Console                TRUSTED
-  00:11:22:33:44:40  10.0.0.183            Network Attached Storage     TRUSTED
-  00:11:22:33:44:50  10.0.0.185            Connected Smart Display      TRUSTED
+  00:11:22:33:44:10  10.0.0.60             IoT Smart Plug               TRUSTED
+  00:11:22:33:44:20  10.0.0.20             Mobile-Station (Handset)     TRUSTED
+  00:11:22:33:44:30  10.0.0.30             Media Console                TRUSTED
+  00:11:22:33:44:40  10.0.0.40             Network Attached Storage     TRUSTED
+  00:11:22:33:44:50  10.0.0.50             Connected Smart Display      TRUSTED
 ================================================================================
 Discovered 7 active nodes in 1.14s. SQLite snapshot updated.
 ```
@@ -206,8 +211,8 @@ Add all verified legitimate network stations to the operator trust list and assi
 ostium trust-all
 
 # Assign persistent human-readable aliases:
-ostium alias 10.0.0.168 "Executive Mobile Handset"
-ostium alias 00:11:22:33:44:30 "Living Room 4K Media Console"
+ostium alias 10.0.0.20 "Primary Mobile Handset"
+ostium alias 00:11:22:33:44:30 "Media Center Console"
 ```
 
 ---

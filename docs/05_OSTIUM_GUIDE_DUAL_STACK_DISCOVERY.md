@@ -85,13 +85,13 @@ Executing Dual-Stack Active Sweep across 10.0.0.0/24 & IPv6 Multicast (wlan0)...
 ================================================================================
   MAC ADDRESS        IP ADDRESS            VENDOR / HOSTNAME            STATUS
 --------------------------------------------------------------------------------
-  00:11:22:33:44:AA  10.0.0.57             ★ THIS HOST (sentinel-node)  TRUSTED
+  00:11:22:33:44:AA  10.0.0.10             ★ THIS HOST (sentinel-node)  TRUSTED
   00:11:22:33:44:01  10.0.0.1              Carrier Gateway Wi-Fi 6E     TRUSTED
-  00:11:22:33:44:10  10.0.0.153            IoT Smart Plug               TRUSTED
-  00:11:22:33:44:20  10.0.0.168            Mobile-Station (Handset)     TRUSTED
-  00:11:22:33:44:30  10.0.0.182            Media Console                TRUSTED
-  00:11:22:33:44:40  10.0.0.183            Network Attached Storage     TRUSTED
-  00:11:22:33:44:50  10.0.0.185            Connected Smart Display      TRUSTED
+  00:11:22:33:44:10  10.0.0.60             IoT Smart Plug               TRUSTED
+  00:11:22:33:44:20  10.0.0.20             Mobile-Station (Handset)     TRUSTED
+  00:11:22:33:44:30  10.0.0.30             Media Console                TRUSTED
+  00:11:22:33:44:40  10.0.0.40             Network Attached Storage     TRUSTED
+  00:11:22:33:44:50  10.0.0.50             Connected Smart Display      TRUSTED
 ================================================================================
 Discovered 7 active nodes in 1.14s. SQLite snapshot updated.
 ```
@@ -106,7 +106,7 @@ ostium scan --json
 [
   {
     "mac": "00:11:22:33:44:aa",
-    "ip": "10.0.0.57",
+    "ip": "10.0.0.10",
     "hostname": "sentinel-node-01",
     "vendor": "Linux Kernel Workstation",
     "is_self": true,
@@ -116,15 +116,15 @@ ostium scan --json
     "mac": "00:11:22:33:44:01",
     "ip": "10.0.0.1",
     "hostname": "gateway.lan",
-    "vendor": "Wistron NeWeb Corp",
+    "vendor": "Enterprise Gateway Platform",
     "is_self": false,
     "status": "gateway"
   },
   {
     "mac": "00:11:22:33:44:20",
-    "ip": "10.0.0.168",
-    "hostname": "Executive-iPhone-15",
-    "vendor": "Apple Inc",
+    "ip": "10.0.0.20",
+    "hostname": "mobile-handset-01",
+    "vendor": "Mobile Hardware Vendor",
     "is_self": false,
     "status": "trusted"
   }

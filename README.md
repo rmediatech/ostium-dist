@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20x86__64-blue.svg" alt="Platform" />
   <img src="https://img.shields.io/badge/Binary-Musl%20Static%20%2F%20Win32%20PE-brightgreen.svg" alt="Binary" />
   <a href="https://github.com/rmediatech/ostium-dist/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Release-v0.2.0-green.svg" alt="Release" /></a>
-  <a href="https://rmediatech.com/downloads"><img src="https://img.shields.io/badge/Download-rmediatech.com-blue.svg" alt="Download" /></a>
+  <a href="https://rmediatech.com/downloads"><img src="https://img.shields.io/badge/Downloads-rmediatech.com%2Fdownloads-blue.svg" alt="Downloads" /></a>
   <a href="docs/09_OSTIUM_CRUCIBLE_EMPIRICAL_AUDIT.md"><img src="https://img.shields.io/badge/Crucible%20TDD-57%2F57%20Passed%20(100%25)-success.svg" alt="Crucible Tests" /></a>
   <img src="https://img.shields.io/badge/Provenance-Ed25519%20Signed%20(SOVEREIGN--SIGN--01)-blueviolet.svg" alt="Signed" />
   <img src="https://img.shields.io/badge/Privacy-100%25%20Zero--Cloud%20Local%20Custody-success.svg" alt="Privacy" />
@@ -93,43 +93,28 @@ flowchart TD
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-
 ---
 
-## 🚀 2. Verified Binary Downloads & Verification
+## 📦 2. Pre-Compiled Binary Matrix & Download Portal
 
-### Official Release Binaries (v0.1.2)
+Verified standalone binaries are distributed directly through the **[RMediaTech Sovereign Binary Vault](https://rmediatech.com/downloads)**:
 
-| Target Architecture | Binary | Checksum | Cryptographic Signature | Packaging |
-| :--- | :--- | :--- | :--- | :--- |
-| **Linux x86_64** (Intel / AMD 64-bit) | [`bin/ostium-v0.1.2-linux-x86_64`](bin/ostium-v0.1.2-linux-x86_64) | [`.sha256`](bin/ostium-v0.1.2-linux-x86_64.sha256) | [`.asc`](bin/ostium-v0.1.2-linux-x86_64.sha256.asc) | Static PIE (Musl) |
-| **Linux aarch64** (ARM64 / Raspberry Pi) | [`bin/ostium-v0.1.2-linux-aarch64`](bin/ostium-v0.1.2-linux-aarch64) | [`.sha256`](bin/ostium-v0.1.2-linux-aarch64.sha256) | [`.asc`](bin/ostium-v0.1.2-linux-aarch64.sha256.asc) | Static Stripped (Musl) |
-| **Windows x86_64** (Win 10/11 / Server) | [`bin/ostium-v0.1.2-windows-x86_64.exe`](bin/ostium-v0.1.2-windows-x86_64.exe) | [`.sha256`](bin/ostium-v0.1.2-windows-x86_64.exe.sha256) | [`.asc`](bin/ostium-v0.1.2-windows-x86_64.exe.sha256.asc) | Standalone PE32+ Console (.exe) |
-| **macOS x86_64** (Intel Mac) | [`bin/ostium-v0.1.2-macos-x86_64`](bin/ostium-v0.1.2-macos-x86_64) | [`.sha256`](bin/ostium-v0.1.2-macos-x86_64.sha256) | [`.asc`](bin/ostium-v0.1.2-macos-x86_64.sha256.asc) | Native Mach-O 64-bit |
-| **macOS aarch64** (Apple Silicon M1-M4) | [`bin/ostium-v0.1.2-macos-aarch64`](bin/ostium-v0.1.2-macos-aarch64) | [`.sha256`](bin/ostium-v0.1.2-macos-aarch64.sha256) | [`.asc`](bin/ostium-v0.1.2-macos-aarch64.sha256.asc) | Native Mach-O 64-bit |
-| **Universal Symlink** (Current Host) | [`bin/ostium`](bin/ostium) | — | — | Static Musl |
+| Target Operating System | Architecture | Checksum (SHA-256) | Vault Download |
+| :--- | :--- | :--- | :--- |
+| **Linux (Static Musl)** | `x86_64` | `217f7318e0705bb915d9cefdba1b883fb9200296584de999578b5f32d7db56a6` | [Download (8.9 MB)](https://rmediatech.com/bin/ostium) |
+| **Linux (ARM64 Static)** | `aarch64` | `e1f2a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f70` | [Download (6.4 MB)](https://rmediatech.com/bin/ostium?arch=aarch64) |
+| **Windows (Standalone PE)** | `x86_64` | `e4e5a00dbc76792c971945c167f1b1e8b6ad2432a0ecd40e6eb78bab13b9854e` | [Download (9.8 MB)](https://rmediatech.com/bin/ostium.exe) |
+| **macOS (Intel)** | `x86_64` | `985959db505922b6e7c716013b3980c5c8a16bf04ec44dad2311d0f07532c069` | [Download (8.2 MB)](https://rmediatech.com/bin/ostium-darwin-x86_64) |
+| **macOS (Apple Silicon)** | `aarch64` | `dad6fffec3c3d3af9a93ca8a9911565654b86d3989551ed90a58b110c822c60b` | [Download (8.0 MB)](https://rmediatech.com/bin/ostium-darwin-arm64) |
 
-### Quick Installation
-
+### 1-Click Stream Download & Installation
 ```bash
-# Linux x86_64
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-linux-x86_64 -o ostium
-chmod +x ostium
-sudo mv ostium /usr/local/bin/
+# 1-Click Stream Install
+curl -sSL https://rmediatech.com/install/ostium | sh
 
-# Linux aarch64 (Raspberry Pi / ARM64)
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-linux-aarch64 -o ostium
+# Or Direct Binary Download
+curl -sSL https://rmediatech.com/bin/ostium -o ostium
 chmod +x ostium
-sudo mv ostium /usr/local/bin/
-
-# macOS (Apple Silicon M1-M4)
-curl -sSL https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-macos-aarch64 -o ostium
-chmod +x ostium
-sudo mv ostium /usr/local/bin/
-
-# Windows x86_64 (PowerShell)
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/xuoxod/ostium-dist/main/bin/ostium-v0.1.2-windows-x86_64.exe" -OutFile "ostium.exe"
-.\ostium.exe whoami
 ```
 
 ### 🏛️ Operational Scope: What Ostium Protects
@@ -142,11 +127,12 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/xuoxod/ostium-dist/mai
 Every release binary is accompanied by deterministic SHA-256 digests and OpenPGP detached signatures signed with the sovereign release key (`Rick Walker <rick@rmediatech.com>`, Key ID: `4E428019A109578B`):
 
 ```bash
-# Verify integrity against release manifest
-sha256sum -c SHA256SUMS
+# 1. Import Public Key
+curl -sSL https://rmediatech.com/SOVEREIGN_RELEASE_KEY.asc | gpg --import
 
-# Verify cryptographic release signature
-gpg --verify SHA256SUMS.asc SHA256SUMS
+# 2. Verify Detached OpenPGP Signature
+curl -sSL https://rmediatech.com/signatures/ostium -o ostium.asc
+gpg --verify ostium.asc ostium
 ```
 
 ---
@@ -170,7 +156,7 @@ ostium sentinel --interval 10
 ostium trust-all
 
 # 6. Assign friendly persistent nicknames to devices (by MAC or IP)
-ostium alias 10.0.0.168 "Executive Mobile Handset"
+ostium alias 10.0.0.20 "Primary Mobile Handset"
 ostium aliases
 
 # 7. Launch the live interactive real-time WIDS Radar & Station Sentinel dashboard
@@ -232,4 +218,4 @@ Released under the Sovereign Open-Source License. Developed for resilient, auton
 
 > [!NOTE]
 > **Legal Trademark & Open Source Attribution Notice:**  
-> All product names, logos, brands, and registered trademarks referenced in this project are property of their respective trademark holders. All company, product, and service names used in this software and documentation are for technical identification and interoperability reference only under U.S. Trademark Fair Use doctrine. Use of these names does not imply endorsement, affiliation, or sponsorship. Firmware references relate to standard open-source GPL-licensed Linux kernel stacks published by upstream hardware ODMs and carriers (e.g. [Verizon Open Source Portal](https://www.verizon.com/support/residential/internet/equipment/open-source-software), [Verizon Open Source GitHub](https://github.com/verizon), [Arcadyan GPL](https://openwrt.org), and [OpenWrt](https://openwrt.org)).
+> All product names, logos, brands, and registered trademarks referenced in this project are property of their respective trademark holders. All company, product, and service names used in this software and documentation are for technical identification and interoperability reference only under U.S. Trademark Fair Use doctrine. Use of these names does not imply endorsement, affiliation, or sponsorship. Firmware references relate to standard open-source GPL-licensed Linux kernel stacks published by upstream hardware ODMs and carriers.

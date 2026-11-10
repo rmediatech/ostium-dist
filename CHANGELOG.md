@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.1] - 2026-10-12
 
 ### 🛡️ Added
-- **Private SQLite WAL Persistence Engine (`crates/ostium-db`)**:
+- **Private SQLite WAL Persistence Engine**:
   - Implemented high-concurrency, zero-sprawl SQLite database engine with Write-Ahead Logging (WAL) enabled at `~/.config/ostium/ostium.db`.
   - Schema tables: `stations` (L2/L3 inventory, RSSI, trust status), `lease_history` (DHCP lifecycle telemetry), `aliases` (persistent friendly device nicknames), and `wids_incidents` (tamper-evident intrusion audit trail).
   - Sub-millisecond atomic transactional queries with zero external database server dependencies.
@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Immutable incident recording: automatically commits incident logs with timestamps, MAC, IP, and threat classification into `wids_incidents`.
   - Tactical audio integration: triggers `gemini-chime` upon detecting or mitigating intrusion events.
 - **Enhanced Device Discovery & Fingerprinting**:
-  - Expanded IEEE OUI hardware fingerprinting engine for HiSense Smart TVs (`88:B8:63`), Amazon Fire TV and Echo devices, Samsung Galaxy handsets, and TCL Smart Displays.
+  - Expanded IEEE OUI hardware fingerprinting engine for smart televisions, IoT connected appliances, mobile handsets, and digital smart displays.
   - Asynchronous RFC 1035 UDP reverse DNS PTR queries to router port 53, stripping randomized MAC evasion by resolving DHCP hostnames.
 - **Crucible Empirical Security Verification**:
   - Verified all 47 adversarial unit and integration tests across formula injection, ANSI log poisoning, sliding-window deauth flood defense, and allocation boundary guardrails.
