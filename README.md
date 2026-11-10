@@ -3,7 +3,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20x86__64-blue.svg" alt="Platform" />
   <img src="https://img.shields.io/badge/Binary-Musl%20Static%20%2F%20Win32%20PE-brightgreen.svg" alt="Binary" />
-  <a href="https://github.com/xuoxod/ostium-dist/releases/tag/v0.1.2"><img src="https://img.shields.io/badge/Release-v0.1.2-green.svg" alt="Release" /></a>
+  <a href="https://github.com/rmediatech/ostium-dist/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Release-v0.2.0-green.svg" alt="Release" /></a>
+  <a href="https://rmediatech.com/downloads"><img src="https://img.shields.io/badge/Download-rmediatech.com-blue.svg" alt="Download" /></a>
   <a href="docs/09_OSTIUM_CRUCIBLE_EMPIRICAL_AUDIT.md"><img src="https://img.shields.io/badge/Crucible%20TDD-57%2F57%20Passed%20(100%25)-success.svg" alt="Crucible Tests" /></a>
   <img src="https://img.shields.io/badge/Provenance-Ed25519%20Signed%20(SOVEREIGN--SIGN--01)-blueviolet.svg" alt="Signed" />
   <img src="https://img.shields.io/badge/Privacy-100%25%20Zero--Cloud%20Local%20Custody-success.svg" alt="Privacy" />
